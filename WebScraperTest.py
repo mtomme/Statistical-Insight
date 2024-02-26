@@ -4,7 +4,7 @@
 
 #########################################################
 zipcode = 78412
-pages = 100
+pages = 1
 data_name = "new3"
 #########################################################
 
@@ -16,17 +16,12 @@ print("\n ** ready to extract data from: {}...{}".format(link[:20], link[-20:]))
 print("\n ** pages processing: {}".format(pages))
 
 from bs4 import BeautifulSoup
-from selenium import webdriver
+from seleniumbase import Driver
 import pandas
 import time
-import os
 
 data = []
-
-chromedriver = "chromedriver.exe"
-os.environ["webdriver.chrome.driver"] = chromedriver
-options = webdriver.ChromeOptions()
-driver = webdriver.Chrome(options=options)
+driver=Driver(uc=True)
 driver.get(link)
 print("\n 3...")
 time.sleep(1)
@@ -40,13 +35,13 @@ for i in range(pages):
 
   html = driver.page_source
   soup = BeautifulSoup(html, "html.parser")
-  cars = soup.find_all("div", {"class":"ft-car cg-dealFinder-result-wrap clearfix"})
+  cars = soup.find_all("div", {"class":"tileWrapper"})
 
   for car in cars:
     row = {}
-    title = car.find_all("h4", {"class":"cg-dealFinder-result-model"})
-    info = car.find_all("div", {"class":"cg-dealFinder-result-stats"})
-    deal = car.find_all("div", {"class":"cg-dealFinder-result-deal" })
+    title = car.find_all("h4", {"class":"tileBody-TitleRow"})
+    info = car.find_all("div", {"class":"tileBody-Pill"})
+    deal = car.find_all("div", {"class":"tileBody-priceText" })
 
     for item in info:
       pre_price = item.find_all("span", {"class": "cg-dealFinder-priceAndMoPayment"})[0].text
@@ -66,8 +61,6 @@ for i in range(pages):
     data.append(row)
 
   print("\n page {} scraping finished".format(i+1))
-  next_page = driver.find_element_by_class_name("nextPageElement")
-  next_page.click()
   assert "CarGurus" in driver.title
 
 driver.close()
