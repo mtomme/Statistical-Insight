@@ -35,20 +35,28 @@ for i in range(pages):
 
   html = driver.page_source
   soup = BeautifulSoup(html, "html.parser")
-  cars = soup.find_all("div", {"class":"tileWrapper"})
+  cars = soup.find_all("div", {"class":"pazLTN"})
 
   for car in cars:
     row = {}
-    title = car.find_all("h4", {"class":"tileBody-TitleRow"})
-    info = car.find_all("div", {"class":"tileBody-Pill"})
-    deal = car.find_all("div", {"class":"tileBody-priceText" })
+    title = car.find_all("h4", {"class":"bLgDNy"})
+    info = car.find_all("div", {"class":"EeLi0s"})
+    deal = car.find_all("div", {"class":"Lxkk9T" })
 
     for item in info:
-      pre_price = item.find_all("span", {"class": "cg-dealFinder-priceAndMoPayment"})[0].text
-      row["price"] = pre_price[pre_price.index("$"):] 
-      row["mileage"] = item.find_all("p")[1].text
-      row["address"] = item.find_all("span",{"class":"cg-dealFinder-result-stats-distance"})[0].text
-      row["dealer_rating"] = str(item.find_all("span", {"class": "cg-dealFinder-result-sellerRatingValue"})[0])
+      for item in info:
+        div_elements = item.find_all("dl", {"class": "propertyList"})
+    if div_elements:  # Check if any elements were found
+        pre_price = div_elements[0].text
+        # Your further processing with pre_price
+    else:
+        # Handle case when no elements are found
+        print("No div elements with class 'k4FSCT' found.")
+
+        row["price"] = pre_price[pre_price.index("$"):] 
+        row["mileage"] = item.find_all("p")[1].text
+        row["address"] = item.find_all("div",{"class":"HLgC_C"})[1].text
+        row["dealer_rating"] = str(item.find_all("div", {"class": "cg-dealFinder-result-sellerRatingValue"})[0])
 
     for item in title:
       row["year"] = title[0].text
