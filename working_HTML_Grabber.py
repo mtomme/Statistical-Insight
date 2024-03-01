@@ -1,17 +1,13 @@
 from requests_html import HTMLSession
 
-# Variables used in the link for searches
-zipcode = 78412
-distance = 100
-makes = 'chevrolet'
-model = ''
-page= '2'
-stockType = 'used'
-sort = 'best_match_desc'
-priceMax = ''
-priceMin = ''
-yearMax = ''
-yearMin = ''
+# Variables used in the link for search
+zipcode = 78412 #we are only currently testing in this zipcode, it may not work properly outside of this
+distance = 100 #please leave this be
+makes = 'chevrolet' #input any car brand type in here that is available in the US
+model = 'chevrolet-camaro' #to input use 'make-model' such as 'chevrolet-camaro' as the text in model
+page= '1' #for now it works will with 1 page but seems to have issues with page 2 and onward
+stockType = 'used' #shows used vehicles, can also be replaced with new or all
+sort = 'best_match_desc' #sorts information by best matching result
 
 # add a feature that goes through pages and adds onto the txt file or makes more txt files '&page={}'
 url = 'https://www.cars.com/shopping/results/?stock_type=all&page={}&page_size=100&sort={}&makes%5B%5D={}&models%5B%5D={}&stock_type={}&maximum_distance={}&zip={}'.format(page, sort, makes, model, stockType, distance, zipcode)
