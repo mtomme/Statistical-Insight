@@ -39,37 +39,37 @@ for i in range(pages):
 
   for car in cars:
     row = {}
-    title = car.find_all("h4", {"class":"bLgDNy"})
-    info = car.find_all("div", {"class":"EeLi0s"})
-    deal = car.find_all("div", {"class":"Lxkk9T" })
+    title = car.find_all("h4", {"class": "bLgDNy"})
+    info = car.find_all("div", {"class": "EeLi0s"})
+    deal = car.find_all("div", {"class": "Lxkk9T" })
 
     for item in info:
-      for item in info:
         div_elements = item.find_all("dl", {"class": "propertyList"})
-    if div_elements:  # Check if any elements were found
-        pre_price = div_elements[0].text
-        # Your further processing with pre_price
-    else:
-        # Handle case when no elements are found
-        print("No div elements with class 'k4FSCT' found.")
+        if div_elements:  # Check if any elements were found
+            pre_price = div_elements[0].text
+            # Your further processing with pre_price
+        else:
+            # Handle case when no elements are found
+            print("No div elements with class 'k4FSCT' found.")
 
-        row["price"] = pre_price[pre_price.index("$"):] 
         row["mileage"] = item.find_all("p")[1].text
-        row["address"] = item.find_all("div",{"class":"HLgC_C"})[1].text
-        row["dealer_rating"] = str(item.find_all("div", {"class": "cg-dealFinder-result-sellerRatingValue"})[0])
-
+        seller_ratings = item.find_all("div", {"class": "cg-dealFinder-result-sellerRatingValue"})
+    if seller_ratings:
+        row["dealer_rating"] = str(seller_ratings[0])
+    else:
+        row["dealer_rating"] = "No rating found"  # or any default value you prefer
     for item in title:
-      row["year"] = title[0].text
-      row["make"] = title[0].text
+        row["year"] = title[0].text
+        row["make"] = title[0].text
 
     for item in deal:
-      row["market_price"] = item.find_all("p",{"class": "cg-dealfinder-result-deal-imv"})[0].text
-      row["days_listed"] = item.find_all("p", {"class": "cg-dealfinder-result-deal-imv"})[1].text
+        row["market_price"] = item.find_all("p", {"class": "cg-dealfinder-result-deal-imv"})[0].text
+        row["days_listed"] = item.find_all("p", {"class": "cg-dealfinder-result-deal-imv"})[1].text
 
     data.append(row)
 
-  print("\n page {} scraping finished".format(i+1))
-  assert "CarGurus" in driver.title
+    print("\n page {} scraping finished".format(i+1))
+    assert "CarGurus" in driver.title
 
 driver.close()
 df = pandas.DataFrame(data)
