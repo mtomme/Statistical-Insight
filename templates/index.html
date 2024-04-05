@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Search</title>
+    <script>
+        function updateModels() {
+            // Get the selected make
+            var selectedMake = document.getElementById("makes").value;
+            // Define models for each make
+            var models = {
+                
+                "": [" ", "Test"],
+                "acura": [" ", "CL", "ILX", "ILX_Hybrid", "Integra", "Legend", "MDX", "MDX_Sport_Hybrid", "NSX", "RDX", "RL", "RLX", "RLX_Sport_Hybrid", "RSX", "TL", "TLX", "TSX", "Vigor", "ZDX"],
+                "audi": [" ", "100", "200", "A3", "A3_e-tron", "A4", "A4_allroad", "A5", "A5_Sportback", "A6", "A6_allroad", "A7", "A7_e", "A8", "A8_e", "allroad", "Cabriolet", "e-tron", "e-tron_GT", "e-tron_S", "e-tron_Sportback", "GT", "Q3", "Q4_e-tron", "Q4_e-tron_Sportback", "Q5", "Q5_e", "Q5_hybrid", "Q5_Sportback", "Q7", "Q8", "Q8_e-tron", "Q8_e-tron_Sportback", "R8", "RS_3", "RS_4", "RS_5", "RS_6_Avant", "RS_7", "RS_e-tron_GT", "RS_Q8", "RS6", "S3", "S4", "S5", "S6", "S7", "S8", "SQ5", "SQ5_Sportback", "SQ7", "SQ8", "SQ8_e-tron", "SQ8_e-tron_Sportback", "TT", "TT_RS", "TTS"],
+                "bmw": [" ", "1-Series", "128", "135", "1500", "1600", "1800", "2-Series", "228", "228_Gran_Coupe", "230", "2000", "2002", "2500", "2600", "3-Series", "320", "323", "325", "328", "328_Gran_Turismo", "328d", "330", "330_Gran_Turismo", "330e", "335", "335_Gran_Turismo", "340", "340_Gran_Turismo", "4-Series", "428", "428_Gran_Coupe", "430", "430_Gran_Coupe", "435", "435_Gran_Coupe", "440", "440_Gran_Coupe", "5-Series", "525", "528", "530", "530e", "535", "535_Gran_Turismo", "535d", "540", "550", "550_Gran_Turismo", "6-Series", "600", "640", "640_Gran_Coupe", "640_Gran_Turismo", "645", "650", "650_Gran_Coupe", "ALPINA_B6_Gran_Coupe", "7-Series", "740", "740e", "745", "745e", "750", "750e", "760", "ALPINA_B7", "8-Series", "840", "840_Gran_Coupe", "850", "ALPINA_B8_Gran_Coupe", "i-Series", "i3", "i4_Gran_Coupe", "i7", "i8", "iX", "i5", "M-Series", "M", "M2", "M235", "M235_Gran_Coupe", "M240", "M3", "M340", "M4", "M440", "M440_Gran_Coupe", "M5", "M550", "M6", "M6_Gran_Coupe", "M760", "M8", "M8_Gran_Coupe", "M850", "M850_Gran_Coupe", "X-Series", "ALPINA_XB7", "X1", "X2", "X3", "X3_M", "X3_PHEV", "X4", "X4_M", "X5", "X5_M", "X5_PHEV", "X5_eDrive", "X6", "X6_M", "X7", "XM", "Z3", "Z4", "Z8"],
+                "buick": [" ", "California", "Cascada", "Century", "Electra", "Enclave", "Encore", "Encore_GX", "Envision", "Envista", "GranSport", "GS_350", "GS_400", "GS_455", "LaCrosse", "LeSabre", "Limited", "Lucerne", "Master", "Model_40", "Model_B", "Model_H", "Model_S", "Park_Avenue", "Rainier", "Reatta", "Regal", "Regal_Sportback", "Regal_TourX", "Rendezvous", "Riviera", "Roadmaster", "Series_60", "Skylark", "Special", "Standard", "Super", "Terraza", "Verano", "Wildcat"],
+                "cadillac": [" ", "Allante", "ATS", "ATS-V", "Brougham", "Calais", "Catera", "CT4", "CT4-V", "CT5", "CT5-V", "CT6", "CT6_PLUG-IN", "CT6-V", "CTS", "CTS-V", "Custom", "DeVille", "DTS", "Eldorado", "ELR", "Escalade", "Escalade_ESV", "Escalade_EXT", "Escalade_Hybrid", "Fleetwood", "LYRIQ", "Model_A", "Model_B", "Model_H", "Model_S", "Model_T", "Series_60", "Series_61", "Series_62", "Series_70", "Seville", "SRX", "STS", "Type_57", "V-16", "XLR", "XT4", "XT5", "XT6", "XTS"],
+                "chevrolet": [" ", "150", "1500", "210", "2500", "3100", "3500", "Apache", "Astro", "Avalanche", "Aveo", "Bel_Air", "Beretta", "Biscayne", "Blazer", "Blazer_EV", "Bolt_EUV", "Bolt_EV", "Brookwood", "C10/K10", "C20/K20", "Camaro", "Cameo_Carrier", "Caprice", "Caprice_Classic", "Caprice_Police_Patrol_Vehicle", "Captiva_Sport", "Cavalier", "Chevelle", "Chevy_II", "City_Express", "Classic", "Cobalt", "Colorado", "Confederate", "Corvair", "Corvette", "Corvette_E-Ray", "Corvette_Stingray", "Cruze", "Cruze_Limited", "Delray", "Deluxe", "El_Camino", "Equinox", "Equinox_EV", "Express_Vans", "Fleetline", "Fleetmaster", "HHR", "Impala", "Impala_Limited", "Independence", "Lumina", "Malibu", "Malibu_Classic", "Malibu_Hybrid", "Malibu_Limited", "Malibu_Maxx", "Master", "Master_85", "Master_Deluxe", "Metro", "Monte_Carlo", "Nomad", "Nova", "Panel", "Pickup_Truck", "Prizm", "S-10", "S-10_Blazer", "Sedan_Delivery", "Silverado_1500", "Sonic", "Spark", "Spark_EV", "Special_Deluxe", "Sportvan", "Sprint", "SS", "SSR", "Standard", "Styleline", "Stylemaster", "Suburban", "Tahoe", "Tahoe_Hybrid", "Tracker", "Trailblazer", "TrailBlazer_EXT", "Traverse", "Traverse_Limited", "Trax", "Uplander", "Vega", "Venture", "Volt"],
+                "chrysler": [" ", "200", "300", "300C", "300M", "Aspen", "Aspen_Hybrid", "Cirrus", "Concorde", "Cordoba", "Crossfire", "E_Class", "Grand_Voyager", "Laser", "LeBaron", "LHS", "New_Yorker", "Pacifica", "Pacifica_Hybrid", "Prowler", "PT_Cruiser", "Sebring", "TC_by_Maserati", "Town_&_Country", "Voyager"],
+                "dodge": [" ", "330", "440", "600", "880", "Aspen", "Avenger", "Caliber", "Caravan", "Challenger", "Charger", "Coronet", "Custom", "D100", "D150", "D250", "D350", "Dakota", "Dart", "Deluxe", "Durango", "Grand_Caravan", "Hornet", "Intrepid", "Journey", "Lancer", "Magnum", "Matador", "Meadowbrook", "Monaco", "Neon", "Nitro", "Panel", "Polara", "Power_Wagon", "Raider", "Ram_Trucks", "Ram_Van", "Ram_Wagon", "Ramcharger", "Shadow", "Special", "Sprinter", "SRT_Viper", "Standard", "Stealth", "Stratus", "Suburban", "Super_Bee", "Van", "Viper", "W250"],
+                "ford": [" ", "Bronco", "Bronco_II", "Bronco_Sport", "C-Max_Energi", "C-Max_Hybrid", "Club_Sedan", "Club_Wagon", "Contour", "Country_Squire", "Coupe", "Crestline", "Crown_Victoria", "Custom", "Customline", "Deluxe", "E-Transit", "Econoline_Vans", "EcoSport", "Edge", "Elite", "Escape", "Escape_Hybrid", "Escape_PHEV", "Escort", "Excursion", "Expedition_(all)", "Explorer", "Explorer_Sport", "Explorer_Sport_Trac", "F-Series_Trucks", "Fairlane", "Fairlane_500", "Falcon", "Fiesta", "Five_Hundred", "Flex", "Focus", "Focus_Electric", "Focus_RS", "Focus_ST", "Freestar", "Freestyle", "Fusion", "Fusion_Energi", "Fusion_Hybrid", "Galaxie", "Galaxie_500", "Galaxie_500_XL", "Gran_Torino", "GT", "GT40", "LTD", "Mainline", "Maverick", "Model_18", "Model_40", "Model_68", "Model_78", "Model_A", "Model_B", "Model_R", "Model_S", "Model_T", "Mustang", "Mustang_Mach-E", "Mustang_Shelby_GT", "Panel", "Pickup_Truck", "Probe", "Ranchero", "Ranger", "Roadster", "Sedan_Delivery", "Sedan_Police_Interceptor", "Shelby_GT350", "Shelby_GT350R", "Shelby_GT500", "Sunliner", "Super_Deluxe", "Taurus", "Taurus_X", "Thunderbird", "Torino", "Transit_Connect", "Transit-150", "Transit-250", "Transit-350", "Utility_Police_Interceptor", "Windstar", "XL"],
+                "genesis": [" ", "Electrified_G80", "Electrified_GV70", "G70", "G80", "G90", "GV60", "GV70", "GV80"]
+// Add more makes and models as needed
+            };
+            // Get the models dropdown element
+            var modelsDropdown = document.getElementById("model");
+            // Clear existing options
+            modelsDropdown.innerHTML = "";
+            // Populate models dropdown with options corresponding to the selected make
+            models[selectedMake].forEach(function(model) {
+                var option = document.createElement("option");
+                option.text = model;
+                option.value = selectedMake + "-" + model; // Include both make and model in the value
+                modelsDropdown.add(option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Car Search</h1>
+    <form action="/search" method="post">
+        <label for="zipcode">Zipcode:</label>
+        <input type="text" id="zipcode" name="zipcode"><br><br>
+
+        <label for="distance">Distance:</label>
+        <select id="distance" name="distance">
+            <option value="10">10 miles</option>
+            <option value="20">20 miles</option>
+            <option value="30">30 miles</option>
+            <option value="40">40 miles</option>
+            <option value="50">50 miles</option>
+            <option value="75">75 miles</option>
+            <option value="100">100 miles</option>
+            <option value="150">150 miles</option>
+            <option value="200">200 miles</option>
+            <option value="250">250 miles</option>
+            <option value="500">500 miles</option>
+            <option selected="" value="all">All miles from</option>
+        </select><br><br>
+
+        <label for="makes">Makes:</label>
+        <select id="makes" name="makes" onchange="updateModels()">
+            <option value="">All makes</option>
+            <option value="acura">Acura</option>
+            <option value="audi">Audi</option>
+            <option value="bmw">BMW</option>
+            <option value="buick">Buick</option>
+            <option value="cadillac">Cadillac</option>
+            <option value="chevrolet">Chevrolet</option>
+            <option value="chrysler">Chrysler</option>
+            <option value="dodge">Dodge</option>
+            <option value="ford">Ford</option>
+            <option value="gmc">GMC</option>
+            <option value="genesis">Genesis</option>
+            <option value="honda">Honda</option>
+            <option value="hyundai">Hyundai</option>
+            <option value="infiniti">INFINITI</option>
+            <option value="jaguar">Jaguar</option>
+            <option value="jeep">Jeep</option>
+            <option value="kia">Kia</option>
+            <option value="land_rover">Land Rover</option>
+            <option value="lexus">Lexus</option>
+            <option value="lincoln">Lincoln</option>
+            <option value="mini">MINI</option>
+            <option value="mazda">Mazda</option>
+            <option value="mercedes_benz">Mercedes-Benz</option>
+            <option value="mitsubishi">Mitsubishi</option>
+            <option value="nissan">Nissan</option>
+            <option value="porsche">Porsche</option>
+            <option value="ram">RAM</option>
+            <option value="subaru">Subaru</option>
+            <option value="tesla">Tesla</option>
+            <option value="toyota">Toyota</option>
+            <option value="volkswagen">Volkswagen</option>
+            <option value="volvo">Volvo</option>
+            <!-- Add more makes if needed -->
+            <option value="ac">AC</option>
+            <option value="alfa_romeo">Alfa Romeo</option>
+            <option value="am_general">Am General</option>
+            <option value="american_motors">American Motors</option>
+            <option value="aston_martin">Aston Martin</option>
+            <option value="austin_healey">Austin-Healey</option>
+            <option value="avanti_motors">Avanti Motors</option>
+            <option value="bentley">Bentley</option>
+            <option value="bricklin">Bricklin</option>
+            <option value="bugatti">Bugatti</option>
+            <option value="daewoo">Daewoo</option>
+            <option value="datsun">Datsun</option>
+            <option value="detomaso">DeTomaso</option>
+            <option value="delorean">Delorean</option>
+            <option value="desoto">Desoto</option>
+            <option value="edsel">Edsel</option>
+            <option value="fiat">FIAT</option>
+            <option value="facel_vega">Facel-Vega</option>
+            <option value="ferrari">Ferrari</option>
+            <option value="fisker">Fisker</option>
+            <option value="geo">Geo</option>
+            <option value="hudson">Hudson</option>
+            <option value="hummer">Hummer</option>
+            <option value="ineos">INEOS</option>
+            <option value="international">International</option>
+            <option value="isuzu">Isuzu</option>
+            <option value="jensen">Jensen</option>
+            <option value="kaiser">Kaiser</option>
+            <option value="karma">Karma</option>
+            <option value="koenigsegg">Koenigsegg</option>
+            <option value="lasalle">LaSalle</option>
+            <option value="lamborghini">Lamborghini</option>
+            <option value="lancia">Lancia</option>
+            <option value="lotus">Lotus</option>
+            <option value="lucid">Lucid</option>
+            <option value="mg">MG</option>
+            <option value="maserati">Maserati</option>
+            <option value="maybach">Maybach</option>
+            <option value="mclaren">McLaren</option>
+            <option value="mercury">Mercury</option>
+            <option value="morgan">Morgan</option>
+            <option value="nash">Nash</option>
+            <option value="oldsmobile">Oldsmobile</option>
+            <option value="opel">Opel</option>
+            <option value="packard">Packard</option>
+            <option value="pagani">Pagani</option>
+            <option value="panoz">Panoz</option>
+            <option value="plymouth">Plymouth</option>
+            <option value="polestar">Polestar</option>
+            <option value="pontiac">Pontiac</option>
+            <option value="renault">Renault</option>
+            <option value="rivian">Rivian</option>
+            <option value="rolls_royce">Rolls-Royce</option>
+            <option value="rover">Rover</option>
+            <option value="saab">Saab</option>
+            <option value="saturn">Saturn</option>
+            <option value="scion">Scion</option>
+            <option value="spyker">Spyker</option>
+            <option value="studebaker">Studebaker</option>
+            <option value="sunbeam">Sunbeam</option>
+            <option value="suzuki">Suzuki</option>
+            <option value="triumph">Triumph</option>
+            <option value="willys">Willys</option>
+            <option value="smart">smart</option>
+        </select><br><br>
+
+        <label for="model">Model:</label>
+        <select id="model" name="model">
+            <!-- Models will be populated dynamically based on the selected make -->
+        </select><br><br>
+
+        <label for="stockType">Stock Type:</label>
+        <select id="stockType" name="stockType">
+            <option value="used">Used</option>
+            <option value="new">New</option>
+            <option value="all">All</option>
+            <option value="cpo">Certified</option>
+            <option value="new_cpo">New & Certified</option>
+        </select><br><br>
+
+        <label for="sort">Sort:</label>
+        <select id="sort" name="sort">
+            <option value="best_match_desc">Best Match</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <!-- Add more options if needed -->
+        </select><br><br>
+
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
