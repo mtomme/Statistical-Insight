@@ -4,6 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #303030; /* Dark gray background */
+            color: #FFFFFF; /* White text */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #37474F; /* Dark teal container */
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #455A64; /* Dark teal input */
+            color: #FFFFFF; /* White text */
+            cursor: pointer;
+        }
+
+        select:focus, input[type="text"]:focus {
+            outline: none;
+        }
+
+        option {
+            background-color: #37474F; /* Dark teal dropdown option */
+            color: #FFFFFF; /* White text */
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #009688; /* Dark teal submit button */
+            color: #FFFFFF; /* White text */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00796B; /* Dark teal hover */
+        }
+    </style>
     <script>
         function updateModels() {
             // Get the selected make
@@ -11,7 +69,6 @@
             // Define models for each make
             var models = {
                 
-                "": [" ", "Test"],
                 "acura": [" ", "CL", "ILX", "ILX_Hybrid", "Integra", "Legend", "MDX", "MDX_Sport_Hybrid", "NSX", "RDX", "RL", "RLX", "RLX_Sport_Hybrid", "RSX", "TL", "TLX", "TSX", "Vigor", "ZDX"],
                 "audi": [" ", "100", "200", "A3", "A3_e-tron", "A4", "A4_allroad", "A5", "A5_Sportback", "A6", "A6_allroad", "A7", "A7_e", "A8", "A8_e", "allroad", "Cabriolet", "e-tron", "e-tron_GT", "e-tron_S", "e-tron_Sportback", "GT", "Q3", "Q4_e-tron", "Q4_e-tron_Sportback", "Q5", "Q5_e", "Q5_hybrid", "Q5_Sportback", "Q7", "Q8", "Q8_e-tron", "Q8_e-tron_Sportback", "R8", "RS_3", "RS_4", "RS_5", "RS_6_Avant", "RS_7", "RS_e-tron_GT", "RS_Q8", "RS6", "S3", "S4", "S5", "S6", "S7", "S8", "SQ5", "SQ5_Sportback", "SQ7", "SQ8", "SQ8_e-tron", "SQ8_e-tron_Sportback", "TT", "TT_RS", "TTS"],
                 "bmw": [" ", "1-Series", "128", "135", "1500", "1600", "1800", "2-Series", "228", "228_Gran_Coupe", "230", "2000", "2002", "2500", "2600", "3-Series", "320", "323", "325", "328", "328_Gran_Turismo", "328d", "330", "330_Gran_Turismo", "330e", "335", "335_Gran_Turismo", "340", "340_Gran_Turismo", "4-Series", "428", "428_Gran_Coupe", "430", "430_Gran_Coupe", "435", "435_Gran_Coupe", "440", "440_Gran_Coupe", "5-Series", "525", "528", "530", "530e", "535", "535_Gran_Turismo", "535d", "540", "550", "550_Gran_Turismo", "6-Series", "600", "640", "640_Gran_Coupe", "640_Gran_Turismo", "645", "650", "650_Gran_Coupe", "ALPINA_B6_Gran_Coupe", "7-Series", "740", "740e", "745", "745e", "750", "750e", "760", "ALPINA_B7", "8-Series", "840", "840_Gran_Coupe", "850", "ALPINA_B8_Gran_Coupe", "i-Series", "i3", "i4_Gran_Coupe", "i7", "i8", "iX", "i5", "M-Series", "M", "M2", "M235", "M235_Gran_Coupe", "M240", "M3", "M340", "M4", "M440", "M440_Gran_Coupe", "M5", "M550", "M6", "M6_Gran_Coupe", "M760", "M8", "M8_Gran_Coupe", "M850", "M850_Gran_Coupe", "X-Series", "ALPINA_XB7", "X1", "X2", "X3", "X3_M", "X3_PHEV", "X4", "X4_M", "X5", "X5_M", "X5_PHEV", "X5_eDrive", "X6", "X6_M", "X7", "XM", "Z3", "Z4", "Z8"],
@@ -62,7 +119,6 @@
 
         <label for="makes">Makes:</label>
         <select id="makes" name="makes" onchange="updateModels()">
-            <option value="">All makes</option>
             <option value="acura">Acura</option>
             <option value="audi">Audi</option>
             <option value="bmw">BMW</option>
@@ -95,7 +151,6 @@
             <option value="toyota">Toyota</option>
             <option value="volkswagen">Volkswagen</option>
             <option value="volvo">Volvo</option>
-            <!-- Add more makes if needed -->
             <option value="ac">AC</option>
             <option value="alfa_romeo">Alfa Romeo</option>
             <option value="am_general">Am General</option>
