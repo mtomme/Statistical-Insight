@@ -69,16 +69,115 @@
             // Define models for each make
             var models = {
                 
+                "ac": [" ", "ac-428", "ac-aceca", "ac-shelby_cobra"],
                 "acura": [" ", "CL", "ILX", "ILX_Hybrid", "Integra", "Legend", "MDX", "MDX_Sport_Hybrid", "NSX", "RDX", "RL", "RLX", "RLX_Sport_Hybrid", "RSX", "TL", "TLX", "TSX", "Vigor", "ZDX"],
+                "alfa_romeo":[" ", "alfa_romeo-164", "alfa_romeo-1900", "alfa_romeo-2000", "alfa_romeo-2600", "alfa_romeo-4c", "alfa_romeo-4c_spider", "alfa_romeo-8c_competizione", "alfa_romeo-alfetta", "alfa_romeo-giulia", "alfa_romeo-giulietta", "alfa_romeo-gtv", "alfa_romeo-montreal", "alfa_romeo-spider", "alfa_romeo-sprint", "alfa_romeo-stelvio", "alfa_romeo-tonale"],
+                "am_general":[" ", "am_general-hummer"],
+                "american_motors":[" ", "american_motors-ambassador", "american_motors-classic", "american_motors-encore", "american_motors-hornet", "american_motors-javelin", "american_motors-marlin", "american_motors-matador", value="american_motors-matador", "american_motors-metropolitan", "american_motors-rambler", "american_motors-rogue"],
+                "aston_martin":[" ", "aston_martin-db_ar1_zagato", "aston_martin-db11", "aston_martin-db12", "aston_martin-db2_4", "aston_martin-db4", "aston_martin-db6", "aston_martin-db7", "aston_martin-db7_vantage", "aston_martin-db9", "aston_martin-dbs", "aston_martin-dbx", "aston_martin-lagonda", "aston_martin-rapide", "aston_martin-rapide_s", "aston_martin-v12_vanquish", "aston_martin-v12_vantage_s", "aston_martin-v8_vantage", "aston_martin-v8_vantage_s", "aston_martin-vanquish", "aston_martin-vantage", "aston_martin-vantage_gt", "aston_martin-virage", "aston_martin-volante", "aston_martin-zagato"], 
                 "audi": [" ", "100", "200", "A3", "A3_e-tron", "A4", "A4_allroad", "A5", "A5_Sportback", "A6", "A6_allroad", "A7", "A7_e", "A8", "A8_e", "allroad", "Cabriolet", "e-tron", "e-tron_GT", "e-tron_S", "e-tron_Sportback", "GT", "Q3", "Q4_e-tron", "Q4_e-tron_Sportback", "Q5", "Q5_e", "Q5_hybrid", "Q5_Sportback", "Q7", "Q8", "Q8_e-tron", "Q8_e-tron_Sportback", "R8", "RS_3", "RS_4", "RS_5", "RS_6_Avant", "RS_7", "RS_e-tron_GT", "RS_Q8", "RS6", "S3", "S4", "S5", "S6", "S7", "S8", "SQ5", "SQ5_Sportback", "SQ7", "SQ8", "SQ8_e-tron", "SQ8_e-tron_Sportback", "TT", "TT_RS", "TTS"],
+                "austin_healey":[" ",
+                "avanti_motors":[" ",
+                "bentley":[" ",
                 "bmw": [" ", "1-Series", "128", "135", "1500", "1600", "1800", "2-Series", "228", "228_Gran_Coupe", "230", "2000", "2002", "2500", "2600", "3-Series", "320", "323", "325", "328", "328_Gran_Turismo", "328d", "330", "330_Gran_Turismo", "330e", "335", "335_Gran_Turismo", "340", "340_Gran_Turismo", "4-Series", "428", "428_Gran_Coupe", "430", "430_Gran_Coupe", "435", "435_Gran_Coupe", "440", "440_Gran_Coupe", "5-Series", "525", "528", "530", "530e", "535", "535_Gran_Turismo", "535d", "540", "550", "550_Gran_Turismo", "6-Series", "600", "640", "640_Gran_Coupe", "640_Gran_Turismo", "645", "650", "650_Gran_Coupe", "ALPINA_B6_Gran_Coupe", "7-Series", "740", "740e", "745", "745e", "750", "750e", "760", "ALPINA_B7", "8-Series", "840", "840_Gran_Coupe", "850", "ALPINA_B8_Gran_Coupe", "i-Series", "i3", "i4_Gran_Coupe", "i7", "i8", "iX", "i5", "M-Series", "M", "M2", "M235", "M235_Gran_Coupe", "M240", "M3", "M340", "M4", "M440", "M440_Gran_Coupe", "M5", "M550", "M6", "M6_Gran_Coupe", "M760", "M8", "M8_Gran_Coupe", "M850", "M850_Gran_Coupe", "X-Series", "ALPINA_XB7", "X1", "X2", "X3", "X3_M", "X3_PHEV", "X4", "X4_M", "X5", "X5_M", "X5_PHEV", "X5_eDrive", "X6", "X6_M", "X7", "XM", "Z3", "Z4", "Z8"],
+                "bricklin":[" ",
+                "bugatti":[" ",
                 "buick": [" ", "California", "Cascada", "Century", "Electra", "Enclave", "Encore", "Encore_GX", "Envision", "Envista", "GranSport", "GS_350", "GS_400", "GS_455", "LaCrosse", "LeSabre", "Limited", "Lucerne", "Master", "Model_40", "Model_B", "Model_H", "Model_S", "Park_Avenue", "Rainier", "Reatta", "Regal", "Regal_Sportback", "Regal_TourX", "Rendezvous", "Riviera", "Roadmaster", "Series_60", "Skylark", "Special", "Standard", "Super", "Terraza", "Verano", "Wildcat"],
                 "cadillac": [" ", "Allante", "ATS", "ATS-V", "Brougham", "Calais", "Catera", "CT4", "CT4-V", "CT5", "CT5-V", "CT6", "CT6_PLUG-IN", "CT6-V", "CTS", "CTS-V", "Custom", "DeVille", "DTS", "Eldorado", "ELR", "Escalade", "Escalade_ESV", "Escalade_EXT", "Escalade_Hybrid", "Fleetwood", "LYRIQ", "Model_A", "Model_B", "Model_H", "Model_S", "Model_T", "Series_60", "Series_61", "Series_62", "Series_70", "Seville", "SRX", "STS", "Type_57", "V-16", "XLR", "XT4", "XT5", "XT6", "XTS"],
                 "chevrolet": [" ", "150", "1500", "210", "2500", "3100", "3500", "Apache", "Astro", "Avalanche", "Aveo", "Bel_Air", "Beretta", "Biscayne", "Blazer", "Blazer_EV", "Bolt_EUV", "Bolt_EV", "Brookwood", "C10/K10", "C20/K20", "Camaro", "Cameo_Carrier", "Caprice", "Caprice_Classic", "Caprice_Police_Patrol_Vehicle", "Captiva_Sport", "Cavalier", "Chevelle", "Chevy_II", "City_Express", "Classic", "Cobalt", "Colorado", "Confederate", "Corvair", "Corvette", "Corvette_E-Ray", "Corvette_Stingray", "Cruze", "Cruze_Limited", "Delray", "Deluxe", "El_Camino", "Equinox", "Equinox_EV", "Express_Vans", "Fleetline", "Fleetmaster", "HHR", "Impala", "Impala_Limited", "Independence", "Lumina", "Malibu", "Malibu_Classic", "Malibu_Hybrid", "Malibu_Limited", "Malibu_Maxx", "Master", "Master_85", "Master_Deluxe", "Metro", "Monte_Carlo", "Nomad", "Nova", "Panel", "Pickup_Truck", "Prizm", "S-10", "S-10_Blazer", "Sedan_Delivery", "Silverado_1500", "Sonic", "Spark", "Spark_EV", "Special_Deluxe", "Sportvan", "Sprint", "SS", "SSR", "Standard", "Styleline", "Stylemaster", "Suburban", "Tahoe", "Tahoe_Hybrid", "Tracker", "Trailblazer", "TrailBlazer_EXT", "Traverse", "Traverse_Limited", "Trax", "Uplander", "Vega", "Venture", "Volt"],
                 "chrysler": [" ", "200", "300", "300C", "300M", "Aspen", "Aspen_Hybrid", "Cirrus", "Concorde", "Cordoba", "Crossfire", "E_Class", "Grand_Voyager", "Laser", "LeBaron", "LHS", "New_Yorker", "Pacifica", "Pacifica_Hybrid", "Prowler", "PT_Cruiser", "Sebring", "TC_by_Maserati", "Town_&_Country", "Voyager"],
+                "daewoo":[" ",
+                "datsun":[" ",
+                "delorean":[" ",
+                "desoto":[" ",
+                "detomaso":[" ",
                 "dodge": [" ", "330", "440", "600", "880", "Aspen", "Avenger", "Caliber", "Caravan", "Challenger", "Charger", "Coronet", "Custom", "D100", "D150", "D250", "D350", "Dakota", "Dart", "Deluxe", "Durango", "Grand_Caravan", "Hornet", "Intrepid", "Journey", "Lancer", "Magnum", "Matador", "Meadowbrook", "Monaco", "Neon", "Nitro", "Panel", "Polara", "Power_Wagon", "Raider", "Ram_Trucks", "Ram_Van", "Ram_Wagon", "Ramcharger", "Shadow", "Special", "Sprinter", "SRT_Viper", "Standard", "Stealth", "Stratus", "Suburban", "Super_Bee", "Van", "Viper", "W250"],
+                "edsel":[" ",
+                "facel_vega":[" ",
+                "ferrari":[" ",
+                "fiat":[" ",
+                "fisker":[" ",
                 "ford": [" ", "Bronco", "Bronco_II", "Bronco_Sport", "C-Max_Energi", "C-Max_Hybrid", "Club_Sedan", "Club_Wagon", "Contour", "Country_Squire", "Coupe", "Crestline", "Crown_Victoria", "Custom", "Customline", "Deluxe", "E-Transit", "Econoline_Vans", "EcoSport", "Edge", "Elite", "Escape", "Escape_Hybrid", "Escape_PHEV", "Escort", "Excursion", "Expedition_(all)", "Explorer", "Explorer_Sport", "Explorer_Sport_Trac", "F-Series_Trucks", "Fairlane", "Fairlane_500", "Falcon", "Fiesta", "Five_Hundred", "Flex", "Focus", "Focus_Electric", "Focus_RS", "Focus_ST", "Freestar", "Freestyle", "Fusion", "Fusion_Energi", "Fusion_Hybrid", "Galaxie", "Galaxie_500", "Galaxie_500_XL", "Gran_Torino", "GT", "GT40", "LTD", "Mainline", "Maverick", "Model_18", "Model_40", "Model_68", "Model_78", "Model_A", "Model_B", "Model_R", "Model_S", "Model_T", "Mustang", "Mustang_Mach-E", "Mustang_Shelby_GT", "Panel", "Pickup_Truck", "Probe", "Ranchero", "Ranger", "Roadster", "Sedan_Delivery", "Sedan_Police_Interceptor", "Shelby_GT350", "Shelby_GT350R", "Shelby_GT500", "Sunliner", "Super_Deluxe", "Taurus", "Taurus_X", "Thunderbird", "Torino", "Transit_Connect", "Transit-150", "Transit-250", "Transit-350", "Utility_Police_Interceptor", "Windstar", "XL"],
                 "genesis": [" ", "Electrified_G80", "Electrified_GV70", "G70", "G80", "G90", "GV60", "GV70", "GV80"]
+                "geo":[" ",
+                "gmc":[" ",
+                "honda":[" ",
+                "hudson":[" ",
+                "hummer":[" ",
+                "hyundai":[" ",
+                "ineos":[" ",
+                "infiniti":[" ",
+                "international":[" ",
+                "isuzu":[" ",
+                "jaguar":[" ",
+                "jeep":[" ",
+                "jensen":[" ",
+                "kaiser":[" ",
+                "karma":[" ",
+                "kia":[" ",
+                "koenigsegg":[" ",
+                "lamborghini":[" ",
+                "lancia":[" ",
+                "land_rover":[" ",
+                "lasalle":[" ",
+                "lexus":[" ",
+                "lincoln":[" ",
+                "lotus":[" ",
+                "lucid":[" ",
+                "maserati":[" ",
+                "maybach":[" ",
+                "mazda":
+                "mclaren":
+                "mercedes_benz":
+                "mercury":
+                "mg":
+                "mini":
+                "mitsubishi":
+                "morgan":
+                "nash":
+                "nissan":
+                "oldsmobile":
+                "opel":
+                "packard":
+                "pagani":
+                "panoz":
+                "plymouth":
+                "polestar":
+                "pontiac":
+                "porsche":
+                "ram":
+                "renault":
+                "rivian":
+                "rolls_royce":
+                "rover":
+                "saab":
+                "saturn":
+                "scion":
+                "smart":
+                "spyker":
+                "studebaker":
+                "subaru":
+                "sunbeam":
+                "suzuki":
+                "tesla":
+                "toyota":
+                "triumph":
+                "volkswagen":
+                "volvo":
+                "willys":
+            
+
+
+
+
+
+
+
+
+
+
+
+
 // Add more makes and models as needed
             };
             // Get the models dropdown element
