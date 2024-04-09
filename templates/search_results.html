@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #303030; /* Dark gray background */
+            color: #FFFFFF; /* White text */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #37474F; /* Dark teal container */
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: left;
+        }
+
+        .car {
+            background-color: #455A64; /* Dark teal car box */
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: flex; /* Align car info and image side by side */
+            align-items: center; /* Vertically center car info and image */
+        }
+
+        .car h2 {
+            margin-top: 0;
+        }
+
+        .car p {
+            margin: 5px 0;
+        }
+
+        .car img {
+            width: 200x; /* Set image width to be about twice as big */
+            margin-right: 20px; /* Add space between image and car info */
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <div class="container">
+        {% for car in car_info %}
+            <div class="car">
+                <img src="{{ car.image }}" alt="Car Image"> <!-- Display the image -->
+                <div>
+                    <h2>{{ car.title }}</h2>
+                    <p>Mileage: {{ car.mileage }}</p>
+                    <p>Price: {{ car.price }}</p>
+                    <p>Location: {{ car.location }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
