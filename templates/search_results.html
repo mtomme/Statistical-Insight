@@ -189,31 +189,34 @@
               </div>
             </div>
         </div>
-    <script>
-      function toggleDropdownMileage() {
-      var dropdownContent = document.getElementById("dropdown-content-mileage");
-      dropdownContent.classList.toggle("show");
-      var chart = new CanvasJS.Chart("chartContainerMileage", {
-        animationEnabled: true,
-        title: {
-          text: "# of Cars Above n miles"
-        },
-        data: [{
-          type: "pie",
-          startAngle: 240,
-          yValueFormatString: "##0.00\"%\"",
-          indexLabel: "{label} {y}",
-          dataPoints: [
-            {y: 79.45, label: "Above n miles 1"},
-            {y: 7.31, label: "Above n miles 2"},
-            {y: 7.06, label: "Above n miles 3"},
-            {y: 4.91, label: "Above n miles 4"},
-            {y: 1.26, label: "Above n miles 5"}
-          ]
-        }]
-      });
-      chart.render();
-    }
+        <script>
+          function toggleDropdownMileage() {
+            var dropdownContent = document.getElementById("dropdown-content-mileage");
+            dropdownContent.classList.toggle("show");
+            var chart = new CanvasJS.Chart("chartContainerMileage", {
+              animationEnabled: true,
+              title: {
+                text: "Mileage Distribution"
+              },
+              data: [{
+                type: "pie",
+                startAngle: 240,
+                yValueFormatString: "##0\" cars\"",
+                indexLabel: "{label} {y}",
+                dataPoints: [
+                  {y: { mileage_categories,['Under 20k']:length }, label: "Under 20k"},
+                  {y: { mileage_categories,['20k-40k']:length }, label: "20k-40k"},
+                  {y: { mileage_categories,['40k-60k']:length }, label: "40k-60k"},
+                  {y: { mileage_categories,['60k-80k']:length }, label: "60k-80k"},
+                  {y: { mileage_categories,['80k-100k']:length }, label: "80k-100k"},
+                  {y: { mileage_categories,['100k+']:length }, label: "100k+"}
+                ]
+              }]
+            });
+            chart.render();
+          }
+        </script>
+        
 
     // Close the dropdown menu if the user clicks outside of it
     window.onclick = function(event) {
