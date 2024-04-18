@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 import requests
-from requests_html import HTMLSession
 import logging
 from bs4 import BeautifulSoup
 
@@ -9,6 +8,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 
 app = Flask(__name__)
 visited_urls = set()  # Global set to track visited URLs
+
 def calculate_average_price(car_info):
     total_price = sum(float(car['price'].replace('$', '').replace(',', '')) for car in car_info if car['price'] != 'Not Priced')
     num_cars_with_price = sum(1 for car in car_info if car['price'] != 'Not Priced')
@@ -19,38 +19,23 @@ def get_car_info(url, debug=False):
         logging.debug(f"URL {url} already visited, stopping further requests.")
         return [], True  # Return True to indicate no more pages
     try:
-        session = HTMLSession()
-        response = session.get(url)
-        if response.status_code == 200:
+        response = requests.get(url, timeout=10, allow_redirects=False)
+        if response.status_code == 302:
+            logging.info(f"Redirect detected for URL {url}, likely no more pages.")
+            return [], True  # No more pages to process
+        elif response.status_code == 200:
             visited_urls.add(url)  # Add URL to the visited set
-            response.html.render()  # Render JavaScript
-            soup = BeautifulSoup(response.html.html, 'html.parser')
+            soup = BeautifulSoup(response.text, 'html.parser')
             titles = soup.select('a.vehicle-card-link.js-gallery-click-link h2.title')
             mileages = soup.select('div.vehicle-details div.mileage')
             prices = soup.select('div.price-section.price-section-vehicle-card span.primary-price')
             locations = soup.select('div.vehicle-dealer')
-
-            # Scrape color and count once
-            color_labels = soup.select('.sds-checkbox .sds-label')
-            colors_and_counts = {}
-            for label in color_labels:
-                color_swatch = label.find('div', class_='color-swatch')
-                if color_swatch:
-                    color_name = color_swatch.get('style').split(':')[-1].strip()
-                    color_count = int(label.find('span', class_='filter-count').text.strip('()'))
-                    colors_and_counts[color_name] = color_count
-                else:
-                    logging.warning("Color swatch not found.")
-
-            car_info = []
-            for title, mileage, price, location in zip(titles, mileages, prices, locations):
-                car_info.append({
-                    'title': title.get_text(strip=True),
-                    'mileage': mileage.get_text(strip=True),
-                    'price': price.get_text(strip=True),
-                    'location': location.get_text(strip=True),
-                    'colors_and_counts': colors_and_counts  # Add colors and counts to each car info
-                })
+            car_info = [{
+                'title': title.get_text(strip=True),
+                'mileage': mileage.get_text(strip=True),
+                'price': price.get_text(strip=True),
+                'location': location.get_text(strip=True)
+            } for title, mileage, price, location in zip(titles, mileages, prices, locations) if all([title, mileage, price, location])]
             return car_info, False
         else:
             logging.error(f"Unexpected status code {response.status_code} for URL: {url}")
@@ -58,6 +43,31 @@ def get_car_info(url, debug=False):
     except requests.RequestException as e:
         logging.error(f"Request failed for URL {url}: {str(e)}")
         return [], True
+
+def categorize_mileage(car_info):
+    categories = {
+        "Under 20k": [],
+        "20k-40k": [],
+        "40k-60k": [],
+        "60k-80k": [],
+        "80k-100k": [],
+        "100k+": []
+    }
+    for car in car_info:
+        mileage = int(car['mileage'].replace(' miles', '').replace(',', ''))
+        if mileage < 20000:
+            categories["Under 20k"].append(car)
+        elif mileage < 40000:
+            categories["20k-40k"].append(car)
+        elif mileage < 60000:
+            categories["40k-60k"].append(car)
+        elif mileage < 80000:
+            categories["60k-80k"].append(car)
+        elif mileage < 100000:
+            categories["80k-100k"].append(car)
+        else:
+            categories["100k+"].append(car)
+    return categories
 
 @app.route('/')
 def index():
@@ -86,7 +96,8 @@ def search():
 
     if car_info:
         average_price = calculate_average_price(car_info)
-        return render_template('search_results.html', car_info=car_info, average_price=average_price)
+        mileage_categories = categorize_mileage(car_info)
+        return render_template('search_results.html', car_info=car_info, average_price=average_price, mileage_categories=mileage_categories)
     return "No search results found."
 
 if __name__ == '__main__':
