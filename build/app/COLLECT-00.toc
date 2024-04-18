@@ -1,0 +1,336 @@
+([('app.exe',
+   'C:\\Users\\Matthew '
+   'Tomme\\Documents\\GitHub\\Statistical-Insight\\build\\app\\app.exe',
+   'EXECUTABLE'),
+  ('python312.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\python312.dll',
+   'BINARY'),
+  ('select.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\select.pyd',
+   'EXTENSION'),
+  ('_hashlib.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_hashlib.pyd',
+   'EXTENSION'),
+  ('_lzma.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_lzma.pyd',
+   'EXTENSION'),
+  ('_bz2.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
+  ('pyexpat.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\pyexpat.pyd',
+   'EXTENSION'),
+  ('_ssl.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_ssl.pyd',
+   'EXTENSION'),
+  ('unicodedata.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_decimal.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_decimal.pyd',
+   'EXTENSION'),
+  ('_multiprocessing.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_multiprocessing.pyd',
+   'EXTENSION'),
+  ('_socket.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('_ctypes.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_ctypes.pyd',
+   'EXTENSION'),
+  ('_queue.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_queue.pyd',
+   'EXTENSION'),
+  ('charset_normalizer\\md__mypyc.cp312-win_amd64.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\charset_normalizer\\md__mypyc.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('charset_normalizer\\md.cp312-win_amd64.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\charset_normalizer\\md.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\etree.cp312-win_amd64.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\etree.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\_elementpath.cp312-win_amd64.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\_elementpath.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\sax.cp312-win_amd64.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\sax.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\objectify.cp312-win_amd64.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\objectify.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\html\\diff.cp312-win_amd64.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\html\\diff.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\html\\clean.cp312-win_amd64.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\html\\clean.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('_overlapped.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_overlapped.pyd',
+   'EXTENSION'),
+  ('_asyncio.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_asyncio.pyd',
+   'EXTENSION'),
+  ('_wmi.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_wmi.pyd',
+   'EXTENSION'),
+  ('win32\\win32evtlog.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\win32\\win32evtlog.pyd',
+   'EXTENSION'),
+  ('win32\\win32api.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\win32\\win32api.pyd',
+   'EXTENSION'),
+  ('lxml\\builder.cp312-win_amd64.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\builder.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('_cffi_backend.cp312-win_amd64.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\_cffi_backend.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('cryptography\\hazmat\\bindings\\_rust.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\cryptography\\hazmat\\bindings\\_rust.pyd',
+   'EXTENSION'),
+  ('_uuid.pyd',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\_uuid.pyd',
+   'EXTENSION'),
+  ('markupsafe\\_speedups.cp312-win_amd64.pyd',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\markupsafe\\_speedups.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('VCRUNTIME140.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('libcrypto-3.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\libcrypto-3.dll',
+   'BINARY'),
+  ('libssl-3.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\libssl-3.dll',
+   'BINARY'),
+  ('libffi-8.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\DLLs\\libffi-8.dll',
+   'BINARY'),
+  ('VCRUNTIME140_1.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\VCRUNTIME140_1.dll',
+   'BINARY'),
+  ('pywin32_system32\\pywintypes312.dll',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\pywin32_system32\\pywintypes312.dll',
+   'BINARY'),
+  ('python3.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1008.0_x64__qbz5n2kfra8p0\\python3.dll',
+   'BINARY'),
+  ('static\\darktheme.css',
+   'C:\\Users\\Matthew '
+   'Tomme\\Documents\\GitHub\\Statistical-Insight\\static\\darktheme.css',
+   'DATA'),
+  ('static\\darkthemesearch.css',
+   'C:\\Users\\Matthew '
+   'Tomme\\Documents\\GitHub\\Statistical-Insight\\static\\darkthemesearch.css',
+   'DATA'),
+  ('static\\lighttheme.css',
+   'C:\\Users\\Matthew '
+   'Tomme\\Documents\\GitHub\\Statistical-Insight\\static\\lighttheme.css',
+   'DATA'),
+  ('static\\lightthemesearch.css',
+   'C:\\Users\\Matthew '
+   'Tomme\\Documents\\GitHub\\Statistical-Insight\\static\\lightthemesearch.css',
+   'DATA'),
+  ('templates\\index.html',
+   'C:\\Users\\Matthew '
+   'Tomme\\Documents\\GitHub\\Statistical-Insight\\templates\\index.html',
+   'DATA'),
+  ('templates\\search_results.html',
+   'C:\\Users\\Matthew '
+   'Tomme\\Documents\\GitHub\\Statistical-Insight\\templates\\search_results.html',
+   'DATA'),
+  ('base_library.zip',
+   'C:\\Users\\Matthew '
+   'Tomme\\Documents\\GitHub\\Statistical-Insight\\build\\app\\base_library.zip',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_abstract_expand.xsl',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_abstract_expand.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\RNG2Schtrn.xsl',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\isoschematron\\resources\\xsl\\RNG2Schtrn.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_dsdl_include.xsl',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_dsdl_include.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\rng\\iso-schematron.rng',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\isoschematron\\resources\\rng\\iso-schematron.rng',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\XSD2Schtrn.xsl',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\isoschematron\\resources\\xsl\\XSD2Schtrn.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_skeleton_for_xslt1.xsl',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_skeleton_for_xslt1.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_message.xsl',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_message.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_svrl_for_xslt1.xsl',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_svrl_for_xslt1.xsl',
+   'DATA'),
+  ('certifi\\py.typed',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\py.typed',
+   'DATA'),
+  ('certifi\\cacert.pem',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\cacert.pem',
+   'DATA'),
+  ('cryptography-42.0.5.dist-info\\LICENSE',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\cryptography-42.0.5.dist-info\\LICENSE',
+   'DATA'),
+  ('cryptography-42.0.5.dist-info\\REQUESTED',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\cryptography-42.0.5.dist-info\\REQUESTED',
+   'DATA'),
+  ('cryptography-42.0.5.dist-info\\INSTALLER',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\cryptography-42.0.5.dist-info\\INSTALLER',
+   'DATA'),
+  ('cryptography-42.0.5.dist-info\\LICENSE.APACHE',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\cryptography-42.0.5.dist-info\\LICENSE.APACHE',
+   'DATA'),
+  ('cryptography-42.0.5.dist-info\\WHEEL',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\cryptography-42.0.5.dist-info\\WHEEL',
+   'DATA'),
+  ('cryptography-42.0.5.dist-info\\LICENSE.BSD',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\cryptography-42.0.5.dist-info\\LICENSE.BSD',
+   'DATA'),
+  ('cryptography-42.0.5.dist-info\\RECORD',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\cryptography-42.0.5.dist-info\\RECORD',
+   'DATA'),
+  ('cryptography-42.0.5.dist-info\\top_level.txt',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\cryptography-42.0.5.dist-info\\top_level.txt',
+   'DATA'),
+  ('cryptography-42.0.5.dist-info\\METADATA',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\cryptography-42.0.5.dist-info\\METADATA',
+   'DATA'),
+  ('importlib_metadata-7.0.1.dist-info\\RECORD',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\importlib_metadata-7.0.1.dist-info\\RECORD',
+   'DATA'),
+  ('importlib_metadata-7.0.1.dist-info\\METADATA',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\importlib_metadata-7.0.1.dist-info\\METADATA',
+   'DATA'),
+  ('importlib_metadata-7.0.1.dist-info\\WHEEL',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\importlib_metadata-7.0.1.dist-info\\WHEEL',
+   'DATA'),
+  ('importlib_metadata-7.0.1.dist-info\\top_level.txt',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\importlib_metadata-7.0.1.dist-info\\top_level.txt',
+   'DATA'),
+  ('importlib_metadata-7.0.1.dist-info\\INSTALLER',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\importlib_metadata-7.0.1.dist-info\\INSTALLER',
+   'DATA'),
+  ('importlib_metadata-7.0.1.dist-info\\LICENSE',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\importlib_metadata-7.0.1.dist-info\\LICENSE',
+   'DATA'),
+  ('flask-3.0.2.dist-info\\REQUESTED',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask-3.0.2.dist-info\\REQUESTED',
+   'DATA'),
+  ('werkzeug-3.0.2.dist-info\\WHEEL',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug-3.0.2.dist-info\\WHEEL',
+   'DATA'),
+  ('werkzeug-3.0.2.dist-info\\RECORD',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug-3.0.2.dist-info\\RECORD',
+   'DATA'),
+  ('flask-3.0.2.dist-info\\WHEEL',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask-3.0.2.dist-info\\WHEEL',
+   'DATA'),
+  ('werkzeug-3.0.2.dist-info\\LICENSE.rst',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug-3.0.2.dist-info\\LICENSE.rst',
+   'DATA'),
+  ('flask-3.0.2.dist-info\\INSTALLER',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask-3.0.2.dist-info\\INSTALLER',
+   'DATA'),
+  ('flask-3.0.2.dist-info\\METADATA',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask-3.0.2.dist-info\\METADATA',
+   'DATA'),
+  ('werkzeug-3.0.2.dist-info\\INSTALLER',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug-3.0.2.dist-info\\INSTALLER',
+   'DATA'),
+  ('flask-3.0.2.dist-info\\LICENSE.rst',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask-3.0.2.dist-info\\LICENSE.rst',
+   'DATA'),
+  ('werkzeug-3.0.2.dist-info\\METADATA',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\werkzeug-3.0.2.dist-info\\METADATA',
+   'DATA'),
+  ('flask-3.0.2.dist-info\\RECORD',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask-3.0.2.dist-info\\RECORD',
+   'DATA'),
+  ('flask-3.0.2.dist-info\\entry_points.txt',
+   'C:\\Users\\Matthew '
+   'Tomme\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\flask-3.0.2.dist-info\\entry_points.txt',
+   'DATA')],)
