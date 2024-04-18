@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, json, render_template, request
 import requests
 import logging
 from bs4 import BeautifulSoup
@@ -54,19 +54,52 @@ def categorize_mileage(car_info):
         "100k+": []
     }
     for car in car_info:
-        mileage = int(car['mileage'].replace(' miles', '').replace(',', ''))
-        if mileage < 20000:
-            categories["Under 20k"].append(car)
-        elif mileage < 40000:
-            categories["20k-40k"].append(car)
-        elif mileage < 60000:
-            categories["40k-60k"].append(car)
-        elif mileage < 80000:
-            categories["60k-80k"].append(car)
-        elif mileage < 100000:
-            categories["80k-100k"].append(car)
-        else:
-            categories["100k+"].append(car)
+        # Clean up the mileage string and handle various formats
+        mileage_str = car['mileage'].lower().replace(' miles', '').replace(' mi.', '').replace(',', '').strip()
+        try:
+            mileage = int(mileage_str)  # Convert the cleaned string to an integer
+            if mileage < 20000:
+                categories["Under 20k"].append(car)
+            elif mileage < 40000:
+                categories["20k-40k"].append(car)
+            elif mileage < 60000:
+                categories["40k-60k"].append(car)
+            elif mileage < 80000:
+                categories["60k-80k"].append(car)
+            elif mileage < 100000:
+                categories["80k-100k"].append(car)
+            else:
+                categories["100k+"].append(car)
+        except ValueError:
+            # Log an error if conversion fails
+            logging.error(f"Failed to convert mileage '{car['mileage']}' to integer.")
+    return categories
+
+def categorize_distance(car_info):
+    categories = {
+        "Local (<50 mi)": [],
+        "Short-range (50-200 mi)": [],
+        "Mid-range (200-500 mi)": [],
+        "Long-range (500-1000 mi)": [],
+        "Cross-country (>1000 mi)": []
+    }
+    for car in car_info:
+        # Extracting the numeric part of the distance string
+        distance_str = car['location'].split("(")[-1].split(" ")[0].replace(',', '').strip()
+        try:
+            distance = int(distance_str)
+            if distance < 50:
+                categories["Local (<50 mi)"].append(car)
+            elif distance < 200:
+                categories["Short-range (50-200 mi)"].append(car)
+            elif distance < 500:
+                categories["Mid-range (200-500 mi)"].append(car)
+            elif distance < 1000:
+                categories["Long-range (500-1000 mi)"].append(car)
+            else:
+                categories["Cross-country (>1000 mi)"].append(car)
+        except ValueError:
+            logging.error(f"Failed to convert distance '{distance_str}' to integer.")
     return categories
 
 @app.route('/')
@@ -94,10 +127,30 @@ def search():
             car_info.extend(page_car_info)
             page_num += 1
 
+        mileage_categories = categorize_mileage(car_info)
+    mileage_data = [
+        {'y': len(mileage_categories['Under 20k']), 'label': 'Under 20k'},
+        {'y': len(mileage_categories['20k-40k']), 'label': '20k-40k'},
+        {'y': len(mileage_categories['40k-60k']), 'label': '40k-60k'},
+        {'y': len(mileage_categories['60k-80k']), 'label': '60k-80k'},
+        {'y': len(mileage_categories['80k-100k']), 'label': '80k-100k'},
+        {'y': len(mileage_categories['100k+']), 'label': '100k+'}
+    ]
+    distance_categories = categorize_distance(car_info)
+    distance_data = [
+        {'y': len(distance_categories["Local (<50 mi)"]), 'label': "Local (<50 mi)"},
+        {'y': len(distance_categories["Short-range (50-200 mi)"]), 'label': "Short-range (50-200 mi)"},
+        {'y': len(distance_categories["Mid-range (200-500 mi)"]), 'label': "Mid-range (200-500 mi)"},
+        {'y': len(distance_categories["Long-range (500-1000 mi)"]), 'label': "Long-range (500-1000 mi)"},
+        {'y': len(distance_categories["Cross-country (>1000 mi)"]), 'label': "Cross-country (>1000 mi)"}
+    ]
+    
+
     if car_info:
         average_price = calculate_average_price(car_info)
-        mileage_categories = categorize_mileage(car_info)
-        return render_template('search_results.html', car_info=car_info, average_price=average_price, mileage_categories=mileage_categories)
+        mileage_data_json = json.dumps(mileage_data)
+        distance_data_json = json.dumps(distance_data)
+        return render_template('search_results.html', car_info=car_info, average_price=average_price, mileage_data_json=mileage_data_json, distance_data_json=distance_data_json)
     return "No search results found."
 
 if __name__ == '__main__':

@@ -33,82 +33,34 @@
     <div class="average-price">
         <h2>Average Price: {{ average_price }}</h2>
     </div>
-    <div class="container">
-        <div class="dropdown">
-            <button onclick="toggleDropdown()" class="dropbtn">Cars Found</button>
-            <div id="dropdown-content" class="dropdown-content">
-                {% for car in car_info %}
-                    <div class="car">
-                        <div>
-                            <h2>{{ car.title }}</h2>
-                            <p>Mileage: {{ car.mileage }}</p>
-                            <p>Price: {{ car.price }}</p>
-                            <p>Location: {{ car.location }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    <script>
-        function toggleDropdown() {
-            var dropdownContent = document.getElementById("dropdown-content");
-            dropdownContent.classList.toggle("show");
-        }
 
-        // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
-
-
-  
-<!-- everything after is mine-->
 
 
   <div class="container">
-            <div class="dropdown">
-                <button onclick="toggleDropdownSellers()" class="dropbtn">Seller Distance Statisics</button>
-              <div id="dropdown-content-sellers" class="dropdown-content">
-                  <div id="chartContainerSellers" style="height: 370px; width: 100%;">                  </div>
-              </div>
-            </div>
-        </div>
-    <script>
-      function toggleDropdownSellers() {
-      var dropdownContent = document.getElementById("dropdown-content-sellers");
-      dropdownContent.classList.toggle("show");
-      var chart = new CanvasJS.Chart("chartContainerSellers", {
-        animationEnabled: true,
-        title: {
-          text: "Available Sellers for {{ searched_vehicle }}"
-        },
-        data: [{
-          type: "pie",
-          startAngle: 240,
-          yValueFormatString: "##0.00\"%\"",
-          indexLabel: "{label} {y}",
-          dataPoints: [
-            {y: 79.45, label: "Seller 1"},
-            {y: 7.31, label: "Seller 2"},
-            {y: 7.06, label: "Seller 3"},
-            {y: 4.91, label: "Seller 4"},
-            {y: 1.26, label: "Seller 5"}
-          ]
-        }]
-      });
-      chart.render();
-    }
+    <div class="dropdown">
+      <button onclick="toggleDropdownDistance()" class="dropbtn">Distance Statistics</button>
+      <div id="dropdown-content-distance" class="dropdown-content">
+        <div id="chartContainerDistance" style="height: 370px; width: 100%;"></div>
+      </div>
+    </div>
+    </div>
+        <script>
+          function toggleDropdownDistance() {
+            var dropdownContent = document.getElementById("dropdown-content-distance");
+            dropdownContent.classList.toggle("show");
+            var chart = new CanvasJS.Chart("chartContainerDistance", {
+              animationEnabled: true,
+              title: { text: "Seller Distance Distribution" },
+              data: [{
+                type: "pie",
+                startAngle: 240,
+                yValueFormatString: "##0\" sellers\"",
+                indexLabel: "{label} {y}",
+                dataPoints: {{ distance_data_json | safe }}
+              }]
+            });
+            chart.render();
+          }
 
     // Close the dropdown menu if the user clicks outside of it
     window.onclick = function(event) {
@@ -127,39 +79,34 @@
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     </script>
 
-<div class="container">
-          <div class="dropdown">
-              <button onclick="toggleDropdownColors()" class="dropbtn">Color Statisics</button>
-            <div id="dropdown-content-colors" class="dropdown-content">
-                <div id="chartContainerColors" style="height: 370px; width: 100%;">                  </div>
-            </div>
-          </div>
+<!--   <div class="container">
+      <div class="dropdown">
+        <button onclick="toggleDropdownColors()" class="dropbtn">Color Statistics</button>
+        <div id="dropdown-content-colors" class="dropdown-content">
+          <div id="chartContainerColors" style="height: 370px; width: 100%;"></div>
+        </div>
       </div>
-  <script>
-    function toggleDropdownColors() {
-    var dropdownContent = document.getElementById("dropdown-content-colors");
-    dropdownContent.classList.toggle("show");
-    var chart = new CanvasJS.Chart("chartContainerColors", {
-      animationEnabled: true,
-      title: {
-        text: "Available Colors for {{ searched_vehicle }}"
-      },
-      data: [{
-        type: "pie",
-        startAngle: 240,
-        yValueFormatString: "##0.00\"%\"",
-        indexLabel: "{label} {y}",
-        dataPoints: [
-          {y: 79.45, label: "Color 1"},
-          {y: 7.31, label: "Color 2"},
-          {y: 7.06, label: "Color 3"},
-          {y: 4.91, label: "Color 4"},
-          {y: 1.26, label: "Color 5"}
-        ]
-      }]
-    });
-    chart.render();
-  }
+    </div>
+    <script>
+      function toggleDropdownColors() {
+        var dropdownContent = document.getElementById("dropdown-content-colors");
+        dropdownContent.classList.toggle("show");
+        var chart = new CanvasJS.Chart("chartContainerColors", {
+          animationEnabled: true,
+          title: {
+            text: "Color Distribution"
+          },
+          data: [{
+            type: "pie",
+            startAngle: 240,
+            yValueFormatString: "##0\" units\"",
+            indexLabel: "{label} {y}",
+            dataPoints: {{ color_data_json | safe }}
+          }]
+        });
+        chart.render();
+      }
+
 
   // Close the dropdown menu if the user clicks outside of it
   window.onclick = function(event) {
@@ -178,12 +125,12 @@
   <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
   </script>
   
-
+--->
   
 
   <div class="container">
             <div class="dropdown">
-                <button onclick="toggleDropdownMileage()" class="dropbtn">Sellers Statisics</button>
+                <button onclick="toggleDropdownMileage()" class="dropbtn">Mileage Statisics</button>
               <div id="dropdown-content-mileage" class="dropdown-content">
                   <div id="chartContainerMileage" style="height: 370px; width: 100%;">                  </div>
               </div>
@@ -195,29 +142,19 @@
             dropdownContent.classList.toggle("show");
             var chart = new CanvasJS.Chart("chartContainerMileage", {
               animationEnabled: true,
-              title: {
-                text: "Mileage Distribution"
-              },
+              title: { text: "Mileage Distribution" },
               data: [{
                 type: "pie",
                 startAngle: 240,
                 yValueFormatString: "##0\" cars\"",
                 indexLabel: "{label} {y}",
-                dataPoints: [
-                  {y: { mileage_categories,['Under 20k']:length }, label: "Under 20k"},
-                  {y: { mileage_categories,['20k-40k']:length }, label: "20k-40k"},
-                  {y: { mileage_categories,['40k-60k']:length }, label: "40k-60k"},
-                  {y: { mileage_categories,['60k-80k']:length }, label: "60k-80k"},
-                  {y: { mileage_categories,['80k-100k']:length }, label: "80k-100k"},
-                  {y: { mileage_categories,['100k+']:length }, label: "100k+"}
-                ]
+                dataPoints: {{ mileage_data_json | safe }}
               }]
             });
             chart.render();
           }
-        </script>
-        
 
+        
     // Close the dropdown menu if the user clicks outside of it
     window.onclick = function(event) {
       if (!event.target.matches('.dropbtn')) {
@@ -231,9 +168,53 @@
         }
       }
     }
+
+
+  
+
     </script>
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     </script>
+
+
+    <div class="container">
+      <div class="dropdown">
+          <button onclick="toggleDropdown()" class="dropbtn">Cars Found</button>
+          <div id="dropdown-content" class="dropdown-content">
+              {% for car in car_info %}
+                  <div class="car">
+                      <div>
+                          <h2>{{ car.title }}</h2>
+                          <p>Mileage: {{ car.mileage }}</p>
+                          <p>Price: {{ car.price }}</p>
+                          <p>Location: {{ car.location }}</p>
+                      </div>
+                  </div>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+  <script>
+      function toggleDropdown() {
+          var dropdownContent = document.getElementById("dropdown-content");
+          dropdownContent.classList.toggle("show");
+      }
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+              var dropdowns = document.getElementsByClassName("dropdown-content");
+              var i;
+              for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                      openDropdown.classList.remove('show');
+                  }
+              }
+          }
+      }
+  </script>
+
 
 <!-- <div class="container">
       <div class="dropdown">
