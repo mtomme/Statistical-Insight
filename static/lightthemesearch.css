@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF; /* Dark gray background */
+    color: #303030; /* White text */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #e6e9eb; /* Dark teal container */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: left;
+}
+
+.car-container {
+    background-color: #bdc5ca; /* Dark teal car box */
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.car-container .car {
+    background-color: #37474F; /* Dark teal background for each car result */
+    border-radius: 10px; /* Rounded edges */
+    padding: 10px; /* Added padding */
+    margin-bottom: 10px; /* Added margin between search results */
+}
+
+.car-container .car h2 {
+    margin-top: 0;
+}
+
+.car-container .car p {
+    margin: 5px 0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Set the width to 100% */
+}
+
+.dropdown .dropbtn {
+    background-color: #455A64; /* Dark teal background for the button */
+    color: #FFFFFF; /* White text */
+    padding: 10px 20px; /* Added padding */
+    font-size: 16px;
+    border: none;
+    border-radius: 20px; /* Rounded edges */
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f8f8f8; /* Slightly darker gray background for dropdown */
+    min-width: 500px; /* Increased minimum width */
+    z-index: 1;
+    border-radius: 20px; /* Rounded edges */
+    padding: 10px; /* Added padding */
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content .car {
+    background-color: #455A64; /* Dark teal background for each car result */
+    border-radius: 10px; /* Rounded edges */
+    padding: 10px; /* Added padding */
+    margin-bottom: 10px; /* Added margin between search results */
+}

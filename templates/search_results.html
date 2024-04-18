@@ -7,10 +7,244 @@
 </head>
 <body>
     <h1>Search Results</h1>
-    <ul>
-        {% for info in car_info %}
-            <li>{{ info }}</li>
-        {% endfor %}
-    </ul>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lightthemesearch.css') }}">
+  <span id="lightThemeUrl" style="display:none;">{{ url_for('static', filename='lightthemesearch.css') }}</span>
+  <span id="darkThemeUrl" style="display:none;">{{ url_for('static', filename='darkthemesearch.css') }}</span>
+    <div style="text-align: center; cursor: pointer;" onclick="toggleTheme()">
+        &#9728;
+    </div>
+    <script>
+      function toggleTheme() {
+          const lightThemeUrl = document.getElementById('lightThemeUrl').textContent;
+          const darkThemeUrl = document.getElementById('darkThemeUrl').textContent;
+          const currentThemeLink = document.querySelector('link[href*="themesearch.css"]');
+          const currentTheme = currentThemeLink.href.includes("lightthemesearch.css") ? "light" : "dark";
+
+          if (currentTheme === "light") {
+              currentThemeLink.href = darkThemeUrl;
+          } else {
+              currentThemeLink.href = lightThemeUrl;
+          }
+      }
+    </script>
+
+  
+    <div class="average-price">
+        <h2>Average Price: {{ average_price }}</h2>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <button onclick="toggleDropdown()" class="dropbtn">Cars Found</button>
+            <div id="dropdown-content" class="dropdown-content">
+                {% for car in car_info %}
+                    <div class="car">
+                        <div>
+                            <h2>{{ car.title }}</h2>
+                            <p>Mileage: {{ car.mileage }}</p>
+                            <p>Price: {{ car.price }}</p>
+                            <p>Location: {{ car.location }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById("dropdown-content");
+            dropdownContent.classList.toggle("show");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+
+  
+<!-- everything after is mine-->
+
+
+  <div class="container">
+            <div class="dropdown">
+                <button onclick="toggleDropdownSellers()" class="dropbtn">Seller Distance Statisics</button>
+              <div id="dropdown-content-sellers" class="dropdown-content">
+                  <div id="chartContainerSellers" style="height: 370px; width: 100%;">                  </div>
+              </div>
+            </div>
+        </div>
+    <script>
+      function toggleDropdownSellers() {
+      var dropdownContent = document.getElementById("dropdown-content-sellers");
+      dropdownContent.classList.toggle("show");
+      var chart = new CanvasJS.Chart("chartContainerSellers", {
+        animationEnabled: true,
+        title: {
+          text: "Available Sellers for {{ searched_vehicle }}"
+        },
+        data: [{
+          type: "pie",
+          startAngle: 240,
+          yValueFormatString: "##0.00\"%\"",
+          indexLabel: "{label} {y}",
+          dataPoints: [
+            {y: 79.45, label: "Seller 1"},
+            {y: 7.31, label: "Seller 2"},
+            {y: 7.06, label: "Seller 3"},
+            {y: 4.91, label: "Seller 4"},
+            {y: 1.26, label: "Seller 5"}
+          ]
+        }]
+      });
+      chart.render();
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content-locations");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    </script>
+
+<div class="container">
+          <div class="dropdown">
+              <button onclick="toggleDropdownColors()" class="dropbtn">Color Statisics</button>
+            <div id="dropdown-content-colors" class="dropdown-content">
+                <div id="chartContainerColors" style="height: 370px; width: 100%;">                  </div>
+            </div>
+          </div>
+      </div>
+  <script>
+    function toggleDropdownColors() {
+    var dropdownContent = document.getElementById("dropdown-content-colors");
+    dropdownContent.classList.toggle("show");
+    var chart = new CanvasJS.Chart("chartContainerColors", {
+      animationEnabled: true,
+      title: {
+        text: "Available Colors for {{ searched_vehicle }}"
+      },
+      data: [{
+        type: "pie",
+        startAngle: 240,
+        yValueFormatString: "##0.00\"%\"",
+        indexLabel: "{label} {y}",
+        dataPoints: [
+          {y: 79.45, label: "Color 1"},
+          {y: 7.31, label: "Color 2"},
+          {y: 7.06, label: "Color 3"},
+          {y: 4.91, label: "Color 4"},
+          {y: 1.26, label: "Color 5"}
+        ]
+      }]
+    });
+    chart.render();
+  }
+
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content-locations");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  </script>
+  <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+  </script>
+  
+
+  
+
+  <div class="container">
+            <div class="dropdown">
+                <button onclick="toggleDropdownMileage()" class="dropbtn">Sellers Statisics</button>
+              <div id="dropdown-content-mileage" class="dropdown-content">
+                  <div id="chartContainerMileage" style="height: 370px; width: 100%;">                  </div>
+              </div>
+            </div>
+        </div>
+    <script>
+      function toggleDropdownMileage() {
+      var dropdownContent = document.getElementById("dropdown-content-mileage");
+      dropdownContent.classList.toggle("show");
+      var chart = new CanvasJS.Chart("chartContainerMileage", {
+        animationEnabled: true,
+        title: {
+          text: "# of Cars Above n miles"
+        },
+        data: [{
+          type: "pie",
+          startAngle: 240,
+          yValueFormatString: "##0.00\"%\"",
+          indexLabel: "{label} {y}",
+          dataPoints: [
+            {y: 79.45, label: "Above n miles 1"},
+            {y: 7.31, label: "Above n miles 2"},
+            {y: 7.06, label: "Above n miles 3"},
+            {y: 4.91, label: "Above n miles 4"},
+            {y: 1.26, label: "Above n miles 5"}
+          ]
+        }]
+      });
+      chart.render();
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content-locations");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    </script>
+
+<!-- <div class="container">
+      <div class="dropdown">
+          <button onclick="toggleDropdownDealers()" class="dropbtn">Dealer Quantity Statistics</button>
+          <div id="dropdown-content-locations" class="dropdown-content">
+        </div>
+      </div>
+</div>
+
+        <div class="container">
+          <div class="dropdown">
+              <button onclick="toggleDropdownDistances()" class="dropbtn">Distance Statistics</button>
+              <div id="dropdown-content-locations" class="dropdown-content">
+              </div>
+          </div>
+        </div> -->
 </body>
 </html>
